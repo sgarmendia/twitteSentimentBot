@@ -1,3 +1,4 @@
+require('dotenv').config()
 var Twitter = require('twitter')
 var config = require('./config.js')
 
@@ -11,7 +12,7 @@ var T = new Twitter(config)
 // lang: only english language tweets
 
 var params = {
-  q: '#skylabrocks',
+  q: '#ethereum',
   count: 5,
   result_type: 'recent',
   lang: 'en'
@@ -22,18 +23,19 @@ T.get('search/tweets', params, function (err, data, response) {
 
   data.statuses.forEach( (tweet, index) => {
 
-    //console.log(tweet.text)
+    console.log(tweet.text , ' | ' , tweet.user.screen_name)
 
-    const id = { id: tweet.id_str }
 
-    T.post('favorites/create', id , function(err, response){
-      if (err) throw err
+    // const id = { id: tweet.id_str }
 
-        const username = response.user.screen_name;
-        const tweetId = response.id_str;
-        console.log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
+    // T.post('favorites/create', id , function(err, response){
+    //   if (err) throw err
 
-    })
+    //     const username = response.user.screen_name;
+    //     const tweetId = response.id_str;
+    //     console.log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
+
+    // })
 
   })
 

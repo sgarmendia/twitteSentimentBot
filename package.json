@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sgarmendia/twitterSentimentBot#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "twitter": "^1.7.1"
   }
 }
