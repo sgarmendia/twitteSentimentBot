@@ -11,8 +11,8 @@ var T = new Twitter(config)
 // lang: only english language tweets
 
 var params = {
-  q: '#blockchain',
-  count: 10,
+  q: '#skylabrocks',
+  count: 5,
   result_type: 'recent',
   lang: 'en'
 }
@@ -20,7 +20,21 @@ var params = {
 T.get('search/tweets', params, function (err, data, response) {
   if (err) throw err
 
-  console.log(data.statuses)
+  data.statuses.forEach( (tweet, index) => {
 
+    //console.log(tweet.text)
+
+    const id = { id: tweet.id_str }
+
+    T.post('favorites/create', id , function(err, response){
+      if (err) throw err
+
+        const username = response.user.screen_name;
+        const tweetId = response.id_str;
+        console.log('Favorited: ', `https://twitter.com/${username}/status/${tweetId}`)
+
+    })
+
+  })
 
 })
