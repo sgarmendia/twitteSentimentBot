@@ -12,7 +12,7 @@ var T = new Twitter(config)
 // lang: only english language tweets
 
 var params = {
-  q: '#ethereum',
+  q: '@SkylabCoders',
   count: 5,
   result_type: 'recent',
   lang: 'en'
