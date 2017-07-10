@@ -1,0 +1,25 @@
+{
+  "name": "twitter_sentiment_bot",
+  "version": "1.0.0",
+  "description": "An app that measures the general sentiment for a given topic on twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgarmendia/twitterSentimentBot.git"
+  },
+  "keywords": [
+    "BigData"
+  ],
+  "author": "SG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgarmendia/twitterSentimentBot/issues"
+  },
+  "homepage": "https://github.com/sgarmendia/twitterSentimentBot#readme",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}
